@@ -1,0 +1,740 @@
+:root {
+  --orange-accent: #aa5908;
+  --sheer-maroon: #311128cf;
+  --white-text: #ebebeb;
+}
+
+.w-layout-blockcontainer {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.w-layout-layout {
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+  grid-auto-columns: 1fr;
+  justify-content: center;
+  padding: 20px;
+}
+
+.w-layout-cell {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+.w-form-formradioinput--inputType-custom {
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+}
+
+.w-form-formradioinput--inputType-custom.w--redirected-focus {
+  box-shadow: 0 0 3px 1px #3898ec;
+}
+
+.w-form-formradioinput--inputType-custom.w--redirected-checked {
+  border-width: 4px;
+  border-color: #3898ec;
+}
+
+@media screen and (max-width: 991px) {
+  .w-layout-blockcontainer {
+    max-width: 728px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .w-layout-blockcontainer {
+    max-width: none;
+  }
+}
+
+h3 {
+  color: #55034b;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: Merriweather, serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.container {
+  background-color: #f8f8f8e6;
+  width: 100%;
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 16px 18px;
+}
+
+.container.hero {
+  background-color: #f8f8f8e6;
+  margin-top: 64px;
+  margin-bottom: 100px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.container.about {
+  grid-column-gap: 11px;
+  grid-row-gap: 11px;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 26px 24px 16px;
+  display: flex;
+}
+
+.hero-without-image {
+  margin-top: auto;
+  padding-top: 48px;
+  padding-bottom: 72px;
+}
+
+.hero-wrapper-two {
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  color: #f3f3f3;
+  text-align: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 750px;
+  margin: 40px auto 42px;
+  padding-bottom: 0;
+  display: flex;
+}
+
+.button-hero-cta {
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-color: #55034b;
+  padding: 12px 25px;
+  font-size: 12px;
+  line-height: 20px;
+  transition: all .2s;
+}
+
+.button-hero-cta:hover {
+  color: #fff;
+  background-color: #aa5908;
+}
+
+.button-hero-cta:active {
+  background-color: #43464d;
+}
+
+.hero-button-block {
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
+  margin-top: 16px;
+  display: flex;
+}
+
+.background {
+  background-image: linear-gradient(#ffffff40, #ffffff40), url('../images/ethan-wright-petroglyphs-abq.jpg');
+  background-position: 0 0, 0 0;
+  background-repeat: repeat, no-repeat;
+  background-size: auto, cover;
+  background-attachment: scroll, fixed;
+  font-family: Montserrat, sans-serif;
+}
+
+.section-heading {
+  color: #55034b;
+  text-align: left;
+  text-transform: none;
+  margin-top: 12px;
+  margin-bottom: 20px;
+  font-family: Merriweather, serif;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.section-heading.transition-services {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.about-paragraph {
+  color: #2d0b23;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.section-services {
+  margin-top: 64px;
+}
+
+.services-container {
+  background-color: #f8f8f8e6;
+  margin-top: 0;
+  margin-bottom: 120px;
+  padding: 30px 20px 56px;
+}
+
+.hero-blurb {
+  color: #55034b;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.hero-blurb.small {
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.text-blurb {
+  color: #55034b;
+  text-align: center;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.text-blurb.sub {
+  margin-top: 18px;
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.business-title {
+  color: #55034b;
+  font-family: Merriweather, serif;
+  font-size: 64px;
+}
+
+.featured-text {
+  color: #55034b;
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+}
+
+.service-cell {
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  background-color: #55034b;
+  border-radius: 8px;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 12px;
+}
+
+.perk {
+  color: #ffecfd;
+  text-align: center;
+  max-width: 278px;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.quick-stack {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-card-text {
+  color: #55034b;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.contact-card-text.name {
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.contact-container {
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  background-color: #fff;
+  border-radius: 8px;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 420px;
+  margin-top: 48px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 16px;
+  display: flex;
+}
+
+.section-about {
+  margin-top: 70px;
+  margin-bottom: 70px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.navbar {
+  background-color: #f9f9f9;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.nav-link {
+  color: #55034b;
+  text-transform: uppercase;
+  padding-left: 24px;
+  padding-right: 24px;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  background-color: var(--orange-accent);
+  color: #fff;
+}
+
+.nav-link.cta {
+  color: #fff;
+  background-color: #55044c;
+}
+
+.nav-link.cta:hover {
+  background-color: var(--orange-accent);
+}
+
+.img {
+  max-width: 120px;
+}
+
+.contact-wes-header {
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.footer-section {
+  background-color: var(--sheer-maroon);
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.container-navlinks {
+  max-width: 1264px;
+}
+
+.easi-gov-logo {
+  margin-top: 6px;
+}
+
+.office-location {
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+.woohoo-banner {
+  background-color: #f8f8f8e6;
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.featured-text-container {
+  grid-column-gap: 11px;
+  grid-row-gap: 11px;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 28px;
+  display: flex;
+}
+
+.san-pedro-office {
+  border-radius: 8px;
+  flex: 0 auto;
+  max-width: 50%;
+  margin-right: 13px;
+}
+
+.text-container {
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+.pic-with-blurb {
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+.biz-info-stack {
+  color: #55034b;
+  width: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.biz-info-subheading {
+  color: #55034b;
+  margin-top: 0;
+}
+
+.biz-details {
+  color: #2d0b23;
+}
+
+.hours {
+  color: #55034b;
+}
+
+.wes-links {
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 0;
+  padding: 8px 9px 8px 7px;
+  display: flex;
+}
+
+.wes-links:hover {
+  background-color: #00000008;
+}
+
+.contact-link {
+  color: #8d96db;
+  font-size: 18px;
+}
+
+.contact-info-div {
+  width: auto;
+}
+
+.section-biz-info {
+  margin-bottom: 98px;
+}
+
+.form-flex-div {
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+.form-flex-div.networking {
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 14px;
+}
+
+.form-field {
+  color: #55034b;
+  flex: 1;
+}
+
+.heard-thru {
+  grid-column-gap: 12px;
+  grid-row-gap: 5px;
+  flex-flow: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+.submit-button {
+  background-color: #55034b;
+  margin-top: 19px;
+  padding: 15px 24px;
+}
+
+.submit-button:hover {
+  background-color: var(--orange-accent);
+}
+
+.section-contact {
+  margin-bottom: 80px;
+}
+
+.radio-button-field {
+  padding: 8px 13px 8px 25px;
+}
+
+.radio-button-field:hover {
+  color: #960684;
+}
+
+.person-and-title {
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.copyright-text {
+  color: #ffecfd;
+  text-align: center;
+}
+
+.social-links {
+  grid-column-gap: 24px;
+  grid-row-gap: 24px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  display: flex;
+}
+
+@media screen and (max-width: 991px) {
+  .container {
+    max-width: 728px;
+  }
+
+  .hero-blurb {
+    width: 80%;
+    line-height: 24px;
+  }
+
+  .nav-link {
+    color: #55044c;
+    background-color: #f9f9f9;
+  }
+
+  .icon {
+    color: #930a84;
+  }
+
+  .container-navlinks {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .menu-button {
+    background-color: #fafafa;
+  }
+
+  .menu-button.w--open {
+    background-color: #e7e7e7;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hero-without-image {
+    padding: 60px 15px;
+  }
+
+  .hero-wrapper-two {
+    grid-column-gap: 27px;
+    grid-row-gap: 27px;
+    margin-top: 22px;
+  }
+
+  .button-hero-cta {
+    width: 100%;
+    padding: 24px 40px;
+    font-size: 14px;
+  }
+
+  .hero-button-block {
+    flex-flow: column;
+    min-width: 420px;
+    max-width: 100%;
+  }
+
+  .about-paragraph {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .hero-blurb {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+  .contact-container {
+    width: 100%;
+  }
+
+  .san-pedro-office {
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  .pic-with-blurb {
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .biz-info-stack {
+    grid-column-gap: 35px;
+    grid-row-gap: 35px;
+  }
+
+  .biz-details {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .form-flex-div {
+    flex-flow: column;
+    align-items: stretch;
+  }
+
+  .form-flex-div.networking {
+    align-items: stretch;
+  }
+
+  .submit-button {
+    width: 100%;
+    margin-top: 16px;
+    padding: 12px 32px;
+  }
+
+  .radio-button-label {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .container {
+    max-width: none;
+  }
+
+  .container.hero {
+    margin-top: 0;
+  }
+
+  .button-hero-cta {
+    min-width: 80vw;
+  }
+
+  .hero-button-block {
+    flex-flow: column;
+    min-width: auto;
+  }
+
+  .section-heading {
+    text-align: center;
+    text-transform: none;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 30px;
+  }
+
+  .about-paragraph {
+    text-align: center;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 20px;
+  }
+
+  .hero-blurb {
+    width: 100%;
+    margin-left: 8px;
+    margin-right: 8px;
+    font-size: 18px;
+  }
+
+  .hero-blurb.small {
+    width: 90%;
+    font-size: 16px;
+  }
+
+  .text-blurb.sub {
+    font-size: 14px;
+  }
+
+  .business-title {
+    font-size: 44px;
+  }
+
+  .featured-text {
+    margin-top: 11px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .contact-card-text {
+    font-size: 18px;
+  }
+
+  .contact-container {
+    grid-column-gap: 8px;
+    grid-row-gap: 8px;
+    flex-flow: column;
+  }
+
+  .nav-menu {
+    background-color: var(--sheer-maroon);
+    display: none;
+  }
+
+  .wes-links {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .person-and-title {
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .client-heading {
+    text-align: center;
+  }
+}
+
+#w-node-cbb51708-1bb9-c77c-8512-5cb50b9c101b-6bcab619, #w-node-_9835029f-aa4e-df6c-c24b-6b1b86d4f6c3-6bcab619 {
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media screen and (max-width: 767px) {
+  #w-node-cbb51708-1bb9-c77c-8512-5cb50b9c101b-6bcab619, #w-node-_9835029f-aa4e-df6c-c24b-6b1b86d4f6c3-6bcab619 {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  #w-node-cbb51708-1bb9-c77c-8512-5cb50b9c101b-6bcab619 {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+  }
+}
+
+
