@@ -122,6 +122,17 @@ h3 {
   transition: all 0.2s;
 }
 
+.hero-button-block.external-sources {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+}
+
+.button-hero-cta.even-width {
+  width: 30%;
+  text-align: center;
+}
+
 .button-hero-cta:hover {
   color: #fff;
   background-color: #aa5908;
@@ -565,7 +576,8 @@ h3 {
     margin-top: 22px;
   }
 
-  .button-hero-cta {
+  .button-hero-cta,
+  .button-hero-cta.even-width {
     width: 100%;
     padding: 24px 40px;
     font-size: 14px;
