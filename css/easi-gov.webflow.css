@@ -150,6 +150,7 @@ h3 {
   grid-row-gap: 12px;
   margin-top: 16px;
   display: flex;
+  justify-content: center;
 }
 
 .background {
