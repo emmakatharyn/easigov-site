@@ -112,6 +112,9 @@ h3 {
 }
 
 .button-hero-cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #fff;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -768,7 +771,6 @@ h3 {
 }
 
 .daca-contact-grid {
-
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
