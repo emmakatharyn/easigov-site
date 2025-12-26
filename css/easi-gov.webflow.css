@@ -79,6 +79,7 @@ h3 {
   margin-bottom: 0;
   padding-top: 16px;
   padding-bottom: 16px;
+  max-width: 1280px;
 }
 
 .container.about {
@@ -105,7 +106,7 @@ h3 {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  max-width: 750px;
+  max-width: 1150px;
   margin: 40px auto 42px;
   padding-bottom: 0;
   display: flex;
@@ -146,11 +147,12 @@ h3 {
 }
 
 .hero-button-block {
-  grid-column-gap: 12px;
+  grid-column-gap: 16px;
   grid-row-gap: 12px;
   margin-top: 16px;
   display: flex;
   justify-content: center;
+  flex-wrap: nowrap;
 }
 
 .background {
@@ -381,6 +383,26 @@ h3 {
   padding-bottom: 24px;
 }
 
+.holiday-closure-banner {
+  background-color: #55034b;
+  padding: 16px 0;
+  margin-top: 0;
+  width: 100%;
+}
+
+.holiday-closure-text {
+  color: #ffffff;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  font-family: Montserrat, sans-serif;
+}
+
+.holiday-closure-text strong {
+  font-weight: 600;
+}
+
 .featured-text-container {
   grid-column-gap: 11px;
   grid-row-gap: 11px;
@@ -539,6 +561,14 @@ h3 {
 @media screen and (max-width: 991px) {
   .container {
     max-width: 728px;
+  }
+
+  .container.hero {
+    max-width: 1100px;
+  }
+
+  .hero-wrapper-two {
+    max-width: 1000px;
   }
 
   .hero-blurb {
@@ -749,11 +779,10 @@ h3 {
 }
 
 .daca-bilingual-box {
-  background-color: #f0f0f0;
-  padding: 24px;
-  border-radius: 8px;
+  background-color: transparent;
+  padding: 0;
   margin: 24px 0;
-  border: 3px solid #55034b;
+  border: none;
 }
 
 .daca-contact-header {
@@ -771,18 +800,70 @@ h3 {
   margin-top: 12px;
 }
 
+.daca-contact-info {
+  max-width: 600px;
+  margin: 32px auto 0;
+  text-align: center;
+}
+
+.daca-language-indicator {
+  font-size: 16px;
+  color: #55034b;
+  margin-bottom: 24px;
+  font-family: Montserrat, sans-serif;
+}
+
+.daca-contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.daca-contact-item {
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
+  color: #55034b;
+  text-align: left;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: flex;
+  transition: background-color 0.2s;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.daca-contact-item:hover {
+  background-color: rgba(85, 3, 75, 0.1);
+}
+
+.daca-contact-item img {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.daca-contact-label {
+  font-weight: 600;
+  color: #55034b;
+  margin-right: 8px;
+  font-family: Montserrat, sans-serif;
+}
+
+.daca-contact-value {
+  color: #8d96db;
+  font-family: Montserrat, sans-serif;
+}
+
 .daca-contact-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
   margin-top: 20px;
-}
-
-.daca-language-indicator {
-  font-size: 14px;
-  color: #666;
-  margin-top: 8px;
 }
 
 #w-node-cbb51708-1bb9-c77c-8512-5cb50b9c101b-6bcab619,
@@ -800,6 +881,15 @@ h3 {
 
   .daca-contact-grid {
     grid-template-columns: 1fr;
+  }
+
+  .daca-contact-item {
+    max-width: 100%;
+    padding: 16px;
+  }
+
+  .daca-contact-links {
+    padding: 0 16px;
   }
 }
 
