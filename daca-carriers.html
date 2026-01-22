@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Tue Sep 23 2025 19:15:19 GMT+0000 (Coordinated Universal Time)  -->
 <html
   data-wf-page="687b14cf90f6b0056bcab619"
@@ -7,6 +7,20 @@
 >
   <head>
     <meta charset="utf-8" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-QNKEZ0LK37"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-QNKEZ0LK37");
+    </script>
     <title>DACA Carriers - EASI Gov</title>
     <meta
       content="Compare health insurance carriers available for DACA recipients in New Mexico. Choose from BCBS, Presbyterian, Delta Dental, and Hartford."
@@ -46,10 +60,10 @@
       !(function (o, c) {
         var n = c.documentElement,
           t = " w-mod-";
-        (n.className += t + "js"),
+        ((n.className += t + "js"),
           ("ontouchstart" in o ||
             (o.DocumentTouch && c instanceof DocumentTouch)) &&
-            (n.className += t + "touch");
+            (n.className += t + "touch"));
       })(window, document);
     </script>
     <link
@@ -73,7 +87,9 @@
         border: 2px solid #55034b;
         border-radius: 8px;
         padding: 32px 24px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
         display: flex;
         flex-direction: column;
       }
