@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-QNKEZ0LK37"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-QNKEZ0LK37");
+    </script>
+    <title>Transit Election Change Form (TEST) - EASI Gov</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="css/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="css/easi.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link
+      href="https://fonts.gstatic.com"
+      rel="preconnect"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    />
+  </head>
+  <body>
+    <h1>Transit Election Change Form (TEST)</h1>
+    <form id="genericForm">
+      <h2>Transit Election Change</h2>
+
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" name="Full Name" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="Email" required />
+
+      <label for="election">Election Request</label>
+      <select id="election" name="Election Request">
+        <option value="Increase Transit to $150">
+          Increase Transit to $150
+        </option>
+        <option value="Discontinue Transit">Discontinue Transit</option>
+      </select>
+
+      <label>
+        <input type="checkbox" id="sendCopy" checked /> Send me a copy of
+        this submission
+      </label>
+
+      <button type="submit">Submit Form</button>
+      <p id="statusMsg" aria-live="polite"></p>
+    </form>
+
+    <script>
+      document
+        .getElementById("genericForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const status = document.getElementById("statusMsg");
+          status.textContent = "Submitting...";
+
+          const form = e.target;
+          const userEmail = document.getElementById("email").value;
+          const sendCopy = document.getElementById("sendCopy").checked;
+
+          // Gather all form fields automatically key-value style
+          const formDataMap = {};
+          const elements = form.querySelectorAll("input, select, textarea");
+          elements.forEach((el) => {
+            if (el.name && el.type !== "checkbox" && el.type !== "submit") {
+              formDataMap[el.name] = el.value;
+            }
+          });
+
+          const payload = {
+            FormTitle: "Transit Election Change Form (TEST)",
+            UserEmail: userEmail,
+            SendUserCopy: sendCopy,
+            Fields: formDataMap,
+          };
+
+          try {
+            const res = await fetch("/forms/SubmitContactForm.ashx", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(payload),
+            });
+
+            const result = await res.json();
+            if (result.success) {
+              status.textContent = "Submitted successfully!";
+              form.reset();
+            } else {
+              status.textContent = "Error submitting form. Please try again.";
+            }
+          } catch (err) {
+            status.textContent = "Network error. Please try again later.";
+          }
+        });
+    </script>
+  </body>
+</html>
