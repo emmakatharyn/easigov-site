@@ -47,8 +47,8 @@ public class SubmitForm : IHttpHandler
 
             // 3. Build HTML Email with Context Encoding
             string safeTitle = HttpUtility.HtmlEncode(formData.FormTitle);
-            string emailBody = $"<h2>Form Submission: {safeTitle}</h2>";
-            emailBody += $"<p><strong>Submitted On:</strong> {DateTime.Now:f}</p><hr/>";
+            string emailBody = "<h2>Form Submission: " + safeTitle + "</h2>";
+            emailBody += "<p><strong>Submitted On:</strong> " + DateTime.Now.ToString("f") + "</p><hr/>";
             emailBody += "<table border='1' cellpadding='8' cellspacing='0' style='border-collapse:collapse; width:100%;'>";
 
             if (formData.Fields != null)
@@ -59,8 +59,8 @@ public class SubmitForm : IHttpHandler
                     string safeKey = HttpUtility.HtmlEncode(item.Key ?? "");
                     string safeValue = HttpUtility.HtmlEncode(item.Value ?? "");
 
-                    emailBody += $"<tr><td style='background:#f4f4f4; width:30%;'><strong>{safeKey}</strong></td>";
-                    emailBody += $"<td>{safeValue}</td></tr>";
+                    emailBody += "<tr><td style='background:#f4f4f4; width:30%;'><strong>" + safeKey + "</strong></td>";
+                    emailBody += "<td>" + safeValue + "</td></tr>";
                 }
             }
             emailBody += "</table>";
@@ -83,7 +83,7 @@ public class SubmitForm : IHttpHandler
                 }
             }
 
-            mail.Subject = $"Form Submission: {safeTitle}";
+            mail.Subject = "Form Submission: " + safeTitle;
             mail.Body = emailBody;
             mail.IsBodyHtml = true;
 
@@ -109,7 +109,7 @@ public class SubmitForm : IHttpHandler
         return Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$", RegexOptions.IgnoreCase);
     }
 
-    public bool IsReusable => false;
+    public bool IsReusable { get { return false; } }
 
     public class FormDataModel
     {
