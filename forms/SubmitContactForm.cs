@@ -96,7 +96,7 @@ public class SubmitForm : IHttpHandler
         catch (Exception ex)
         {
             context.Response.StatusCode = 500;
-            context.Response.Write("{\"success\": false, \"message\": \"An error occurred while processing your form.\"}");
+            context.Response.Write("{\"success\": false, \"message\": \"" + ex.Message.Replace("\"", "'") + "\"}");
         }
     }
 
