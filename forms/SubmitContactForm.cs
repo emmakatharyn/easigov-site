@@ -12,6 +12,7 @@ public class SubmitForm : IHttpHandler
     public void ProcessRequest(HttpContext context)
     {
         context.Response.ContentType = "application/json";
+        context.Response.TrySkipIisCustomErrors = true;
 
         // 1. Enforce POST Method
         if (context.Request.HttpMethod != "POST")
