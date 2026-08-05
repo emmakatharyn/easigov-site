@@ -17,7 +17,7 @@ body {
   min-height: 100%;
   background-color: #fff;
   font-family: Arial, sans-serif;
-  font-size: 14px;
+  font-size: 1.2rem;
   line-height: 20px;
   color: #333;
 }
@@ -75,6 +75,7 @@ h6 {
 }
 
 p {
+  font-size: 1.2rem;
   margin-top: 0;
   margin-bottom: 10px;
 }
@@ -215,11 +216,10 @@ ol {
 
 .container.hero {
   background-color: #f8f8f8e6;
-  margin-top: 64px;
+  margin-top: 32px;
   margin-bottom: 0;
   padding-top: 16px;
   padding-bottom: 16px;
-  max-width: 1280px;
 }
 
 .container.about {
@@ -238,8 +238,8 @@ ol {
 
 .hero-without-image {
   margin-top: auto;
-  padding-top: 32px;
-  padding-bottom: 42px;
+  padding-top: 16px;
+  padding-bottom: 24px;
 }
 
 .hero-wrapper-two {
@@ -251,7 +251,7 @@ ol {
   justify-content: flex-start;
   align-items: center;
   max-width: 1150px;
-  margin: 40px auto 42px;
+  margin: 20px auto 24px;
   padding-bottom: 0;
   display: flex;
 }
@@ -261,6 +261,7 @@ ol {
   font-family: Merriweather, serif;
   font-size: 64px;
   line-height: 1.2;
+  margin-top: 0;
 }
 
 .hero-blurb {
@@ -421,18 +422,18 @@ h3 {
    ========================================================================== */
 
 .section-services {
-  margin-top: 64px;
+  margin-top: 32px;
 }
 
 .section-about {
-  margin-top: 70px;
-  margin-bottom: 70px;
+  margin-top: 32px;
+  margin-bottom: 32px;
   padding-top: 24px;
   padding-bottom: 24px;
 }
 
 .section-biz-info {
-  margin-bottom: 98px;
+  margin-bottom: 32px;
 }
 
 .section-contact {
@@ -717,6 +718,50 @@ h3 {
   text-align: center;
 }
 
+.footer-separator {
+  margin: 0 0.35em;
+}
+
+.footer-link {
+  color: #ffecfd;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer-link:hover {
+  color: #fff;
+}
+
+.privacy-content {
+  text-align: left;
+  font-family: Montserrat, sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #333;
+  padding: 2rem 1.75rem;
+}
+
+.privacy-content p {
+  margin-bottom: 16px;
+}
+
+.privacy-content ul {
+  margin-bottom: 16px;
+}
+
+.privacy-content li {
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+.privacy-content a {
+  color: #55034b;
+}
+
+.privacy-content .section-heading {
+  margin-top: 36px;
+}
+
 .social-links {
   grid-column-gap: 24px;
   grid-row-gap: 24px;
@@ -839,10 +884,6 @@ h3 {
     max-width: 728px;
   }
 
-  .container.hero {
-    max-width: 1100px;
-  }
-
   .hero-wrapper-two {
     max-width: 1000px;
   }
@@ -894,7 +935,7 @@ h3 {
   }
 
   .hero-without-image {
-    padding: 60px 15px;
+    padding: 24px 15px;
   }
 
   .hero-wrapper-two {
@@ -912,7 +953,6 @@ h3 {
 
   .hero-button-block {
     flex-flow: column;
-    min-width: 420px;
     max-width: 100%;
   }
 

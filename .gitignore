@@ -1,5 +1,6 @@
 images/
 .DS_Store
 **/.DS_Store
-
+scratch.txt
 web.config
+.vscode/
