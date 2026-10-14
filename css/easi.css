@@ -78,6 +78,7 @@ p {
   font-size: 1.2rem;
   margin-top: 0;
   margin-bottom: 10px;
+  line-height: 1.5;
 }
 
 ul,
@@ -94,7 +95,10 @@ ol {
 :root {
   --orange-accent: #aa5908;
   --sheer-maroon: #311128cf;
+  --dark-maroon-nav: rgba(49, 17, 40, 0.81);
   --white-text: #ebebeb;
+  --brand-maroon: #55034b;
+  --brand-pink: #ffecfd;
 }
 
 /* ==========================================================================
@@ -102,7 +106,7 @@ ol {
    ========================================================================== */
 
 .w-layout-blockcontainer {
-  max-width: 940px;
+  max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -135,7 +139,7 @@ ol {
    ========================================================================== */
 
 .navbar {
-  background-color: #f9f9f9;
+  background-color: var(--dark-maroon-nav);
   padding: 8px;
   position: relative;
 }
@@ -157,31 +161,38 @@ ol {
 }
 
 .nav-link {
-  color: #55034b;
+  color: var(--brand-pink);
   text-transform: uppercase;
   padding: 16px 24px;
-  font-weight: 500;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
   text-decoration: none;
+  letter-spacing: 0.5px;
 }
 
 .nav-link:hover {
-  background-color: var(--orange-accent);
+  background-color: rgba(255, 255, 255, 0.12);
   color: #fff;
+}
+
+.nav-link-bold {
+  font-weight: 700;
 }
 
 .nav-link.cta {
   color: #fff;
-  background-color: #55044c;
+  background-color: transparent;
 }
 
 .nav-link.cta:hover {
-  background-color: var(--orange-accent);
+  background-color: rgba(255, 255, 255, 0.12);
 }
 
 .menu-button {
   display: none;
   cursor: pointer;
-  background-color: #fafafa;
+  background-color: transparent;
   border: none;
   padding: 4px 8px;
   align-items: center;
@@ -189,16 +200,18 @@ ol {
 }
 
 .menu-button.is-open {
-  background-color: #e7e7e7;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .icon {
-  color: #55034b;
+  color: #fff;
   display: block;
 }
 
 .easi-gov-logo {
   margin-top: 6px;
+  height: 48px;
+  width: auto;
 }
 
 /* ==========================================================================
@@ -208,27 +221,31 @@ ol {
 .container {
   background-color: #f8f8f8e6;
   width: 100%;
-  max-width: 940px;
+  max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
   padding: 16px 18px;
 }
 
 .container.hero {
-  background-color: #f8f8f8e6;
+  background-color: rgba(248, 248, 248, 0.9);
+  border-radius: 8px;
+  box-shadow: 0px 25px 50.8px 0px rgba(0, 0, 0, 0.2);
   margin-top: 32px;
   margin-bottom: 0;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding: 48px 64px;
 }
 
 .container.about {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0px 25px 50.8px 0px rgba(0, 0, 0, 0.2);
   grid-column-gap: 11px;
   grid-row-gap: 11px;
   flex-flow: column;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 26px 24px 16px;
+  padding: 48px;
   display: flex;
 }
 
@@ -251,17 +268,23 @@ ol {
   justify-content: flex-start;
   align-items: center;
   max-width: 1150px;
-  margin: 20px auto 24px;
+  margin: 0 auto 8px;
   padding-bottom: 0;
   display: flex;
 }
 
-.business-title {
-  color: #55034b;
-  font-family: Merriweather, serif;
-  font-size: 64px;
-  line-height: 1.2;
-  margin-top: 0;
+.hero-logo-img {
+  max-width: 380px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.hero-taglines {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
 .hero-blurb {
@@ -269,6 +292,7 @@ ol {
   font-family: Montserrat, sans-serif;
   font-size: 20px;
   font-weight: 500;
+  margin-bottom: 0;
 }
 
 .hero-blurb.small {
@@ -300,9 +324,12 @@ ol {
   letter-spacing: 2px;
   text-transform: uppercase;
   background-color: #55034b;
-  padding: 12px 25px;
-  font-size: 12px;
-  line-height: 20px;
+  padding: 24px 40px;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: normal;
+  border-radius: 4px;
   transition: all 0.2s;
   text-decoration: none;
 }
@@ -328,10 +355,10 @@ ol {
 .background {
   background-image:
     linear-gradient(#ffffff40, #ffffff40),
-    url("https://easigov.com/images/ethan-wright-petroglyphs-abq.jpg");
+    url("../images/ethan-wright-petroglyphs-abq.jpg");
   background-position:
     0 0,
-    0 0;
+    center center;
   background-repeat: repeat, no-repeat;
   background-size: auto, cover;
   background-attachment: scroll, fixed;
@@ -375,13 +402,16 @@ h3 {
   margin-left: auto;
   margin-right: auto;
   font-family: Montserrat, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 1.25;
 }
 
 .about-paragraph {
   color: #2d0b23;
+  font-family: Montserrat, sans-serif;
   font-size: 18px;
-  line-height: 22px;
+  font-weight: 600;
+  line-height: 1.59;
 }
 
 .text-blurb {
@@ -391,17 +421,8 @@ h3 {
   margin-left: auto;
   margin-right: auto;
   font-family: Montserrat, sans-serif;
-  font-size: 18px;
-  font-style: italic;
-  font-weight: 400;
-}
-
-.text-blurb.sub {
-  margin-top: 18px;
-  font-family: Montserrat, sans-serif;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .text-center {
@@ -411,10 +432,50 @@ h3 {
 .perk {
   color: #ffecfd;
   text-align: center;
-  max-width: 278px;
-  font-size: 17px;
-  font-weight: 700;
+  max-width: 360px;
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
   text-decoration: none;
+  line-height: normal;
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Promo Banner
+   ========================================================================== */
+
+.woohoo-banner {
+  background-color: rgba(248, 248, 248, 0.81);
+  border-radius: 8px;
+  box-shadow: 0px 7px 40px 0px rgba(0, 0, 0, 0.25);
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 56px;
+  padding: 22px 48px;
+  text-align: center;
+}
+
+.woohoo-headline {
+  color: #55034b;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -1.4px;
+  line-height: 0.98;
+  margin-bottom: 12px;
+}
+
+.woohoo-subtext {
+  color: #55034b;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: italic;
+  line-height: 0.98;
+  margin-bottom: 0;
 }
 
 /* ==========================================================================
@@ -428,8 +489,8 @@ h3 {
 .section-about {
   margin-top: 32px;
   margin-bottom: 32px;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .section-biz-info {
@@ -445,24 +506,28 @@ h3 {
    ========================================================================== */
 
 .services-container {
-  background-color: #f8f8f8e6;
+  background-color: rgba(248, 248, 248, 0.9);
+  border-radius: 8px;
+  box-shadow: 0px 25px 50.8px 0px rgba(0, 0, 0, 0.2);
   margin-top: 0;
-  margin-bottom: 60px;
-  padding: 30px 20px 56px;
+  margin-bottom: 32px;
+  padding: 48px 48px 56px;
 }
 
 .service-cell {
-  grid-column-gap: 16px;
-  grid-row-gap: 16px;
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
   background-color: #55034b;
+  border-radius: 4px;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.25);
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  padding: 16px 12px;
+  padding: 24px 40px;
 }
 
 .quick-stack {
-  max-width: 800px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -478,42 +543,72 @@ h3 {
 }
 
 /* ==========================================================================
-   Contact
+   Contact Card
    ========================================================================== */
 
 .contact-container {
-  grid-column-gap: 16px;
-  grid-row-gap: 16px;
   background-color: #fff;
-  border-radius: 8px;
-  flex-flow: row;
-  justify-content: flex-start;
-  align-items: center;
-  max-width: 420px;
-  margin-top: 48px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 16px;
+  border-radius: 4px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
   display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  margin-top: 33px;
+  padding: 24px;
 }
 
-.contact-wes-header {
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
+.contact-card-top {
   display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.contact-card-label {
+  color: #55034b;
+  font-family: Montserrat, sans-serif;
+  font-size: 24px;
+  line-height: 1.75;
+  margin-bottom: 0;
+}
+
+.contact-card-logo {
+  height: 45px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+}
+
+.contact-card-bottom {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  gap: 24px;
 }
 
 .contact-card-text {
   color: #55034b;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  line-height: 1.44;
   text-align: left;
   margin-bottom: 0;
 }
 
 .contact-card-text.name {
-  margin-bottom: 0;
-  font-size: 16px;
   font-weight: 700;
+}
+
+.contact-card-text.italic {
+  font-style: italic;
+}
+
+.contact-links-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .contact-info-div {
@@ -526,7 +621,7 @@ h3 {
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 0;
-  padding: 8px 9px 8px 7px;
+  padding: 4px 8px 4px 4px;
   display: flex;
   text-decoration: none;
 }
@@ -535,18 +630,76 @@ h3 {
   background-color: #00000008;
 }
 
+.wes-links img {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
 .contact-link {
-  color: #8d96db;
+  color: #007abb;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: underline;
+  line-height: 1.75;
+}
+
+/* ==========================================================================
+   DACA Section
+   ========================================================================== */
+
+.section-daca {
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+
+.daca-card {
+  background-color: rgba(248, 248, 248, 0.9);
+  border-radius: 4px;
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 42px 64px;
+}
+
+.daca-heading {
+  color: #55034b;
+  font-family: Merriweather, serif;
+  font-size: 64px;
+  font-weight: 400;
+  letter-spacing: -3.84px;
+  line-height: 0.98;
+  text-align: center;
+  margin: 0;
+}
+
+.daca-subtext {
+  color: #55034b;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 0.98;
+  text-align: center;
+  margin-bottom: 0;
 }
 
 /* ==========================================================================
    About
    ========================================================================== */
 
+.about-heading {
+  font-weight: 700;
+}
+
 .san-pedro-office {
   border-radius: 8px;
   flex: 0 auto;
-  max-width: 50%;
+  max-width: 45%;
   margin-right: 13px;
 }
 
@@ -560,23 +713,85 @@ h3 {
 }
 
 .pic-with-blurb {
-  grid-column-gap: 8px;
+  grid-column-gap: 33px;
   grid-row-gap: 8px;
   flex-flow: row;
   justify-content: flex-start;
   align-items: flex-start;
   display: flex;
+  width: 100%;
+}
+
+.sonm-client-info {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.sonm-brand {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sonm-seal {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.sonm-brand-text {
+  display: flex;
+  flex-direction: column;
+  font-family: Merriweather, serif;
+  font-weight: 700;
+  color: #0d5864;
+  line-height: 0;
+}
+
+.sonm-brand-line1 {
+  font-size: 16px;
+  letter-spacing: -0.96px;
+  line-height: none;
+  display: block;
+}
+
+.sonm-brand-line2 {
+  font-size: 24px;
+  letter-spacing: -1.44px;
+  line-height: 0.98;
+  display: block;
+}
+
+.client-heading {
+  color: #55034b;
+  font-family: Merriweather, serif;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -1.8px;
+  line-height: 0.98;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /* ==========================================================================
    Business Info
    ========================================================================== */
 
+.biz-info-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0px 25px 50.8px 0px rgba(0, 0, 0, 0.2);
+  padding: 48px;
+}
+
 .biz-info-stack {
   color: #55034b;
   width: 100%;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .biz-info-subheading {
@@ -585,11 +800,25 @@ h3 {
 }
 
 .biz-details {
-  color: #2d0b23;
+  color: #55034b;
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.59;
+}
+
+.biz-details a:link,
+.biz-details a:visited {
+  color: #55034b;
+  text-decoration: underline;
 }
 
 .hours {
   color: #55034b;
+}
+
+.biz-info-cta {
+  margin-top: 33px;
 }
 
 /* ==========================================================================
@@ -602,16 +831,6 @@ h3 {
   justify-content: flex-start;
   align-items: center;
   display: flex;
-}
-
-.woohoo-banner {
-  background-color: #f8f8f8e6;
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 64px;
-  padding-top: 24px;
-  padding-bottom: 24px;
 }
 
 .holiday-closure-banner {
@@ -632,10 +851,6 @@ h3 {
 
 .holiday-closure-text strong {
   font-weight: 600;
-}
-
-.img {
-  max-width: 120px;
 }
 
 /* ==========================================================================
@@ -699,8 +914,9 @@ h3 {
   flex-flow: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-bottom: 10px;
+  margin-bottom: 0;
   display: flex;
+  gap: 0;
 }
 
 /* ==========================================================================
@@ -709,57 +925,52 @@ h3 {
 
 .footer-section {
   background-color: var(--sheer-maroon);
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 24px 32px;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
 .copyright-text {
-  color: #ffecfd;
-  text-align: center;
+  color: var(--brand-pink);
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  line-height: 0.98;
+  margin-bottom: 0;
 }
 
 .footer-separator {
   margin: 0 0.35em;
 }
 
+.footer-social img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  display: block;
+}
+
 .footer-link {
-  color: #ffecfd;
+  color: var(--brand-pink);
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
   text-decoration: underline;
   text-underline-offset: 2px;
+  letter-spacing: 0.3px;
 }
 
 .footer-link:hover {
   color: #fff;
-}
-
-.privacy-content {
-  text-align: left;
-  font-family: Montserrat, sans-serif;
-  font-size: 15px;
-  line-height: 1.65;
-  color: #333;
-  padding: 2rem 1.75rem;
-}
-
-.privacy-content p {
-  margin-bottom: 16px;
-}
-
-.privacy-content ul {
-  margin-bottom: 16px;
-}
-
-.privacy-content li {
-  margin-bottom: 8px;
-  font-size: 1.2rem;
-}
-
-.privacy-content a {
-  color: #55034b;
-}
-
-.privacy-content .section-heading {
-  margin-top: 36px;
 }
 
 .social-links {
@@ -773,7 +984,453 @@ h3 {
 }
 
 /* ==========================================================================
-   DACA Page Styles
+   Privacy Policy Page
+   ========================================================================== */
+
+.background-privacy {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)),
+    url("../images/allison-saeng-background.jpg");
+  background-position: 0 0, center center;
+  background-repeat: repeat, no-repeat;
+  background-size: auto, cover;
+  background-attachment: scroll, fixed;
+  font-family: Montserrat, sans-serif;
+}
+
+.pp-hero-card {
+  background-color: rgba(248, 248, 248, 0.9);
+  border-radius: 4px;
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 42px 64px;
+  margin-top: 32px;
+}
+
+.pp-hero-layout {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.pp-hero-photo {
+  width: 422px;
+  height: 317px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.pp-hero-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #55034b;
+}
+
+.pp-page-title {
+  font-family: Merriweather, serif;
+  font-size: 64px;
+  font-weight: 400;
+  letter-spacing: -3.84px;
+  line-height: 0.98;
+  color: #55034b;
+  margin: 0;
+}
+
+.pp-intro-text {
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #55034b;
+  margin: 0;
+}
+
+.pp-therefore-text {
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #55034b;
+  margin: 0;
+  width: 100%;
+}
+
+.pp-content-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0px 25px 50.8px 0px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+  padding: 64px 48px;
+  margin-bottom: 32px;
+}
+
+.pp-section-heading {
+  font-family: Merriweather, serif;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -2.16px;
+  line-height: 0.98;
+  color: #55034b;
+  margin: 0;
+}
+
+.pp-body-text {
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.59;
+  color: #55034b;
+  margin: 0;
+  width: 100%;
+}
+
+/* Zero out all default margins; spacing handled by gap on the card or explicit sibling rules */
+.pp-body-text p,
+.pp-body-text ul,
+.pp-body-text li {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.59;
+}
+
+/* Blank-line equivalent between sibling blocks (~1.59 lines at 18px) */
+.pp-body-text p + p,
+.pp-body-text p + ul,
+.pp-body-text ul + p {
+  margin-top: 1.59em;
+}
+
+.pp-body-text ul {
+  list-style-type: disc;
+  padding-left: 27px;
+}
+
+.pp-body-text a {
+  color: #55034b;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
+/* "How to Contact Us" — two-column flex row */
+.pp-contact-cols {
+  display: flex;
+  gap: 33px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.pp-contact-cols > .pp-body-text {
+  flex: 1;
+  min-width: 0;
+  width: auto;
+}
+
+/* ==========================================================================
+   DACA Page — Nav & Enrollment Banner
+   ========================================================================== */
+
+.nav-espanol {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #94640a;
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 18px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+}
+
+.nav-espanol:hover {
+  background-color: #7a5208;
+  color: #fff;
+}
+
+.enrollment-banner {
+  background-color: rgba(85, 3, 75, 0.75);
+  box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 65px;
+  padding: 16px 48px;
+  text-align: center;
+  color: #ffecfd;
+  flex-wrap: wrap;
+}
+
+.enrollment-headline {
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -1.26px;
+  line-height: 0.98;
+  white-space: nowrap;
+}
+
+.enrollment-subtext {
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 0.98;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   DACA Page — Hero
+   ========================================================================== */
+
+.daca-hero-card {
+  padding: 48px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.daca-hero-layout {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.daca-hero-photo-wrap {
+  position: relative;
+  flex-shrink: 0;
+  width: 340px;
+  height: 260px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.daca-hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.daca-hero-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(85, 3, 75, 0.29);
+  pointer-events: none;
+}
+
+.daca-hero-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: #55034b;
+}
+
+.daca-page-title {
+  font-family: Merriweather, serif;
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: -2.4px;
+  line-height: 0.98;
+  color: #55034b;
+  margin: 0;
+}
+
+.daca-hero-desc {
+  text-align: left;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* ==========================================================================
+   DACA Page — Carrier Cards
+   ========================================================================== */
+
+.carrier-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 33px;
+  justify-content: center;
+  width: 100%;
+}
+
+.carrier-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: calc(50% - 17px);
+  min-width: 280px;
+  padding: 19px 24px;
+  overflow: hidden;
+}
+
+.carrier-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 16px;
+}
+
+.carrier-card-name {
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #30265c;
+  line-height: 18px;
+  margin-bottom: 0;
+}
+
+.carrier-card-type {
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #727173;
+  line-height: normal;
+  margin-bottom: 0;
+}
+
+.carrier-card-desc {
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #30265c;
+  line-height: normal;
+  margin-bottom: 0;
+}
+
+.carrier-card-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: auto;
+}
+
+.carrier-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #55034b;
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+  padding: 11px;
+  border-radius: 4px;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+
+.carrier-btn:hover {
+  background-color: #aa5908;
+  color: #fff;
+}
+
+/* ==========================================================================
+   DACA Page — Bilingual Support
+   ========================================================================== */
+
+.daca-bilingual-layout {
+  display: flex;
+  gap: 33px;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 33px;
+}
+
+.daca-bilingual-photo {
+  width: 340px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.daca-bilingual-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: #55034b;
+}
+
+.daca-bilingual-text .section-heading {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.daca-contact-inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 42px;
+  flex-wrap: wrap;
+}
+
+.daca-contact-inline-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.daca-contact-label-text {
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #000;
+  line-height: 1.75;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   DACA Page — Referral Sites
+   ========================================================================== */
+
+.referral-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.referral-section-heading .section-heading {
+  margin: 0;
+}
+
+.referral-buttons {
+  flex-wrap: nowrap;
+  gap: 24px;
+  width: 100%;
+}
+
+.referral-btn {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  white-space: normal;
+  line-height: 1.3;
+  padding: 24px;
+}
+
+/* ==========================================================================
+   DACA Page Styles (legacy — kept for backward compatibility)
    ========================================================================== */
 
 .daca-button-container {
@@ -859,7 +1516,7 @@ h3 {
 }
 
 .daca-contact-value {
-  color: #8d96db;
+  color: #00a4fc;
   font-family: Montserrat, sans-serif;
 }
 
@@ -877,11 +1534,43 @@ h3 {
 
 @media screen and (max-width: 991px) {
   .w-layout-blockcontainer {
-    max-width: 728px;
+    max-width: 860px;
+  }
+
+  .nav-espanol {
+    padding: 14px 16px;
+  }
+
+  .daca-hero-photo-wrap {
+    width: 240px;
+    height: 220px;
+  }
+
+  .daca-page-title {
+    font-size: 32px;
+    letter-spacing: -1.5px;
+  }
+
+  .carrier-card {
+    width: 100%;
+  }
+
+  .daca-bilingual-photo {
+    width: 240px;
+    height: 220px;
+  }
+
+  .referral-buttons {
+    flex-wrap: wrap;
+  }
+
+  .referral-btn {
+    flex: unset;
+    width: 100%;
   }
 
   .container {
-    max-width: 728px;
+    max-width: 860px;
   }
 
   .hero-wrapper-two {
@@ -902,7 +1591,7 @@ h3 {
     top: 100%;
     left: 0;
     right: 0;
-    background-color: #f9f9f9;
+    background-color: rgba(49, 17, 40, 0.95);
     z-index: 100;
   }
 
@@ -915,17 +1604,55 @@ h3 {
   }
 
   .nav-link {
-    color: #55044c;
-    background-color: #f9f9f9;
+    color: var(--brand-pink);
+    background-color: transparent;
+    padding: 16px 20px;
+  }
+
+  .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
   }
 
   .icon {
-    color: #930a84;
+    color: #fff;
   }
 
   .container-navlinks {
     padding-left: 6px;
     padding-right: 6px;
+  }
+
+  .daca-heading {
+    font-size: 44px;
+    letter-spacing: -2px;
+  }
+
+  .contact-card-bottom {
+    flex-direction: column;
+  }
+
+  .pp-hero-photo {
+    width: 280px;
+    height: 240px;
+  }
+
+  .pp-page-title {
+    font-size: 48px;
+    letter-spacing: -2.5px;
+  }
+
+  .pp-section-heading {
+    font-size: 28px;
+    letter-spacing: -1.5px;
+  }
+
+  .pp-hero-card {
+    padding: 32px 40px;
+  }
+
+  .pp-content-card {
+    padding: 48px 40px;
+    gap: 24px;
   }
 }
 
@@ -934,33 +1661,79 @@ h3 {
     max-width: none;
   }
 
+  .daca-hero-card {
+    padding: 24px;
+  }
+
+  .daca-hero-layout {
+    flex-direction: column;
+  }
+
+  .daca-hero-photo-wrap {
+    width: 100%;
+    height: 220px;
+  }
+
+  .daca-page-title {
+    font-size: 28px;
+    letter-spacing: -1px;
+  }
+
+  .daca-bilingual-layout {
+    flex-direction: column;
+  }
+
+  .daca-bilingual-photo {
+    width: 100%;
+    height: 220px;
+  }
+
+  .daca-contact-inline {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .enrollment-banner {
+    gap: 16px;
+    padding: 14px 24px;
+  }
+
   .hero-without-image {
-    padding: 24px 15px;
+    padding: 16px 15px 24px;
+  }
+
+  .container.hero {
+    padding: 32px 24px;
   }
 
   .hero-wrapper-two {
-    grid-column-gap: 27px;
-    grid-row-gap: 27px;
-    margin-top: 22px;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    margin-top: 0;
+  }
+
+  .hero-logo-img {
+    max-width: 260px;
   }
 
   .button-hero-cta,
   .button-hero-cta.even-width {
     width: 100%;
-    padding: 24px 40px;
+    padding: 20px 32px;
     font-size: 14px;
   }
 
   .hero-button-block {
     flex-flow: column;
     max-width: 100%;
+    width: 100%;
   }
 
   .about-paragraph {
-    text-align: center;
+    text-align: left;
     margin-top: 10px;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 17px;
   }
 
   .hero-blurb {
@@ -982,6 +1755,7 @@ h3 {
     flex-flow: column;
     justify-content: flex-start;
     align-items: center;
+    gap: 16px;
   }
 
   .biz-info-stack {
@@ -991,7 +1765,7 @@ h3 {
 
   .biz-details {
     font-size: 16px;
-    line-height: 24px;
+    line-height: 1.5;
   }
 
   .form-flex-div {
@@ -1029,6 +1803,65 @@ h3 {
   .daca-contact-links {
     padding: 0 16px;
   }
+
+  .daca-heading {
+    font-size: 36px;
+    letter-spacing: -1.5px;
+  }
+
+  .pp-hero-card {
+    padding: 24px;
+  }
+
+  .pp-hero-layout {
+    flex-direction: column;
+  }
+
+  .pp-hero-photo {
+    width: 100%;
+    height: 220px;
+  }
+
+  .pp-page-title {
+    font-size: 36px;
+    letter-spacing: -2px;
+  }
+
+  .pp-content-card {
+    padding: 32px 24px;
+    gap: 24px;
+  }
+
+  .pp-section-heading {
+    font-size: 24px;
+    letter-spacing: -1px;
+  }
+
+  .pp-contact-cols {
+    flex-direction: column;
+  }
+
+  .daca-card {
+    padding: 32px 24px;
+  }
+
+  .services-container {
+    padding: 32px 24px 40px;
+  }
+
+  .biz-info-card {
+    padding: 32px 24px;
+  }
+
+  .woohoo-banner {
+    padding: 22px 24px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .sonm-brand {
+    flex-wrap: wrap;
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -1038,6 +1871,7 @@ h3 {
 
   .container.hero {
     margin-top: 0;
+    padding: 24px 16px;
   }
 
   .button-hero-cta {
@@ -1058,10 +1892,9 @@ h3 {
   }
 
   .about-paragraph {
-    text-align: center;
     padding-left: 12px;
     padding-right: 12px;
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .hero-blurb {
@@ -1076,45 +1909,37 @@ h3 {
     font-size: 16px;
   }
 
-  .text-blurb.sub {
-    font-size: 14px;
+  .woohoo-headline {
+    font-size: 17px;
   }
 
-  .business-title {
-    font-size: 44px;
-  }
-
-  .featured-text {
-    margin-top: 11px;
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-
-  .contact-card-text {
-    font-size: 18px;
+  .woohoo-subtext {
+    font-size: 16px;
   }
 
   .contact-container {
     grid-column-gap: 8px;
     grid-row-gap: 8px;
-    flex-flow: column;
   }
 
-  .nav-menu {
-    background-color: var(--sheer-maroon);
+  .contact-card-text {
+    font-size: 16px;
   }
 
-  .wes-links {
-    justify-content: center;
-    align-items: center;
+  .contact-link {
+    font-size: 16px;
   }
 
-  .person-and-title {
-    justify-content: flex-start;
-    align-items: center;
+  .contact-card-bottom {
+    flex-direction: column;
+  }
+
+  .footer-content {
+    gap: 16px;
   }
 
   .client-heading {
-    text-align: center;
+    font-size: 22px;
+    letter-spacing: -0.8px;
   }
 }
