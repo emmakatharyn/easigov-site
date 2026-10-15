@@ -119,14 +119,31 @@
       </div>
     </div>
 
-    <!-- <div class="enrollment-banner" role="alert">
-      <strong class="enrollment-headline"
-        >🚨 FECHA L&Iacute;MITE DE INSCRIPCI&Oacute;N</strong
-      >
-      <span class="enrollment-subtext"
-        >Quedan 14 d&iacute;as &bull; &iexcl;Inscr&iacute;bete hoy!</span
-      >
-    </div> -->
+    <div class="enrollment-banner" role="alert" style="display:none">
+      <strong class="enrollment-headline">🚨 FECHA L&Iacute;MITE DE INSCRIPCI&Oacute;N</strong>
+      <div class="enrollment-countdown">
+        <div class="countdown-unit">
+          <span class="countdown-digits" id="countdown-days">--</span>
+          <span class="countdown-label">d&iacute;as</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-digits" id="countdown-hours">--</span>
+          <span class="countdown-label">hrs</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-digits" id="countdown-minutes">--</span>
+          <span class="countdown-label">min</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-digits" id="countdown-seconds">--</span>
+          <span class="countdown-label">seg</span>
+        </div>
+      </div>
+      <span class="enrollment-subtext">&iexcl;Inscr&iacute;bete hoy!</span>
+    </div>
 
     <main>
       <!-- Hero Section -->
@@ -462,5 +479,6 @@
     </footer>
 
     <script src="js/nav.js"></script>
+    <script src="js/countdown.js"></script>
   </body>
 </html>
