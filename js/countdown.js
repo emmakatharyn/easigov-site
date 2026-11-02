@@ -36,8 +36,12 @@
     setVal(document.getElementById("countdown-seconds"), Math.floor((diff % (1000 * 60)) / 1000));
   }
 
-  // Call timeIsTicking() from the browser console to preview the banner.
-  // To go live: remove the style="display:none" from the .enrollment-banner in the HTML.
+  // Start the countdown automatically on page load.
+  updateCountdown();
+  intervalId = setInterval(updateCountdown, 1000);
+
+  // Call timeIsTicking() from the browser console to reveal a hidden banner.
+  // To go live: remove the style="display:none" from .enrollment-banner in the HTML.
   window.timeIsTicking = function () {
     var banner = document.querySelector(".enrollment-banner");
     if (!banner) {
@@ -45,9 +49,5 @@
       return;
     }
     banner.style.display = "";
-    updateCountdown();
-    if (!intervalId) {
-      intervalId = setInterval(updateCountdown, 1000);
-    }
   };
 })();
